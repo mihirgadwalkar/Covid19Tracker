@@ -35,5 +35,8 @@
                 </tbody>
             </table>
         </div>
+        <div class="col">
+            <google-chart [type]='chart.LineChart' style="width: 100%;" [options]='chart.options' [height]='chart.height' [data]='dataTable'></google-chart>
+        </div>
     </div>
 </div>

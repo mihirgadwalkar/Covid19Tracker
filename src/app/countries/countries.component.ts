@@ -21,12 +21,19 @@ export class CountriesComponent implements OnInit {
   selectedCountryData : DateWiseData[]; 
   dateWiseData ;
   loading = true;
-  options: {
-    height : 500, 
-    animation:{
-      duration: 1000,
-      easing: 'out',
-    },
+  dataTable=[];
+  newData=[];
+  chart = {
+    LineChart : "LineChart", 
+    PieChart : "PieChart" ,
+    height: 500, 
+    options: {
+      animation:{
+        duration: 1000,
+        easing: 'out',
+      },
+      is3D: true
+    } 
   }
   constructor(private service:DataService) { }
 
@@ -53,7 +60,7 @@ export class CountriesComponent implements OnInit {
     ).subscribe(
       {
         complete : ()=>{
-         this.updateValues('India')
+         this.updateValues('Afghanistan')
          this.loading = false;
         }
       }
@@ -61,17 +68,16 @@ export class CountriesComponent implements OnInit {
 
   }
 
-  
   updateChart(){
-    let dataTable = [];
-    dataTable.push(["Date" , 'Cases'])
+    this.dataTable = [];
+    //dataTable.push(["Date" , 'Cases'])
     this.selectedCountryData.forEach(cs=>{
-      dataTable.push([cs.date , cs.cases])
+      this.dataTable.push([cs.date , cs.cases])
     })
   }
 
   updateValues(country : string){
-    console.log(country);
+    //console.log(country);
     this.data.forEach(cs=>{
       if(cs.country == country){
         this.totalActive = cs.active
@@ -83,5 +89,28 @@ export class CountriesComponent implements OnInit {
     this.selectedCountryData  = this.dateWiseData[country]
     // console.log(this.selectedCountryData);
     this.updateChart();
+    this.initChart(country);
   } 
+
+  initChart(country:string) {
+    this.newData = [];
+    // this.datatable.push(["Country", "Cases"])
+    this.data.forEach(cs => {
+      //let value :number ;
+      if(cs.country==country){
+        this.newData.push([
+          'confirmed', cs.confirmed
+        ])
+        this.newData.push([
+          'deaths', cs.deaths
+        ])
+        this.newData.push([
+          'recovered', cs.recovered
+        ])
+        this.newData.push([
+          'active', cs.active
+        ])
+    }})
+    //console.log(this.newData);
+  }
 }
