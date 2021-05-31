@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
-import { GlobalDataSummary } from 'src/app/models/global-data';
 import { DateWiseData } from 'src/app/models/date-wise-data';
 import { merge } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -12,7 +11,7 @@ import { map } from 'rxjs/operators';
 })
 export class CountriesComponent implements OnInit {
 
-  data : GlobalDataSummary[];
+  data : any;
   countries : string[] = [];
   totalConfirmed = 0;
   totalActive = 0;
@@ -60,7 +59,7 @@ export class CountriesComponent implements OnInit {
     ).subscribe(
       {
         complete : ()=>{
-         this.updateValues('Afghanistan')
+         this.updateValues('India')
          this.loading = false;
         }
       }

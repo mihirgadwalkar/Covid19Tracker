@@ -9,6 +9,9 @@ import { CountriesComponent } from './countries/countries.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardCardComponent } from './dashboard-card/dashboard-card.component'
 import { GoogleChartsModule } from 'angular-google-charts';
+import { HomepageComponent } from './homepage/homepage.component';
+import { SafetyComponent } from './safety/safety.component';
+import { HelplinesComponent } from './helplines/helplines.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { GoogleChartsModule } from 'angular-google-charts';
     NavbarComponent,
     HomeComponent,
     CountriesComponent,
-    DashboardCardComponent
+    DashboardCardComponent,
+    HomepageComponent,
+    SafetyComponent,
+    HelplinesComponent
   ],
   imports: [
     BrowserModule,

@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CountriesComponent } from './countries/countries.component';
+import { HelplinesComponent } from './helplines/helplines.component';
 import { HomeComponent } from './home/home.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { SafetyComponent } from './safety/safety.component';
 
 const routes: Routes = [
+  { path:'' , component : HomepageComponent},
   { path:'home', component:HomeComponent },
   { path:'countries', component:CountriesComponent },
-  { path:'', redirectTo:'/home', pathMatch:'full' }
+  { path:'safety' ,component: SafetyComponent},
+  { path:'helplines' ,component:HelplinesComponent},
+  { path:'**', redirectTo:'',pathMatch:"full"},
 ];
 
 @NgModule({
