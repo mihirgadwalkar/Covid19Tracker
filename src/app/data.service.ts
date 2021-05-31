@@ -29,13 +29,13 @@ export class DataService {
     this.year=now.getFullYear();
     this.date=now.getDate();
 
-    console.log(
+    /* console.log(
       {
         date:this.date,
         month:this.month,
         year:this.year
       }
-      );
+      );*/
     this.globalDataUrl=`${this.baseUrl}${this.getDate(this.month)}-${this.getDate(this.date)}-${this.year}${this.extension}`
     //console.log(this.globalDataUrl);
    }

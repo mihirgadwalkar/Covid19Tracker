@@ -1,8 +1,9 @@
+<!-- The case when the page is loading -->
 <div class="ui inverted dimmer" [class.active]='loading'>
     <div class="ui text loader">Loading</div>
 </div>
 
-<div class="jumbotron bg-white text-center p-0 m-0">
+<div class="main bg-white text-center p-0 m-0">
     <h1 class="display-4">Covid-19 Tracker</h1>
     <hr>
     <app-dashboard-card [totalConfirmed]='totalConfirmed' [totalActive]='totalActive'
@@ -18,25 +19,25 @@
       <div class="field">
         <div class="ui radio checkbox">
           <input type="radio" name="casetype" value="c" id="c" #c (click)='updateChart(c)' tabindex="0" class="hidden">
-          <label for="c">Confirmed</label>
+          <label for="c"><h3>Confirmed</h3></label>
         </div>
       </div>
       <div class="field">
         <div class="ui radio checkbox">
           <input type="radio" name="casetype" value="a" id="a" #a (click)='updateChart(a)' tabindex="0" class="hidden">
-          <label for="a">Active</label>
+          <label for="a"><h3>Active</h3></label>
         </div>
       </div>
       <div class="field">
         <div class="ui radio checkbox">
           <input type="radio" name="casetype" value="r" id="r" #r (click)='updateChart(r)' tabindex="0" class="hidden">
-          <label for="r">Recovered</label>
+          <label for="r"><h3>Recovered</h3></label>
         </div>
       </div>
       <div class="field">
         <div class="ui radio checkbox">
           <input type="radio" name="casetype" value="d" id="d" #d (click)='updateChart(d)' tabindex="0" class="hidden">
-          <label for="d">Deaths</label>
+          <label for="d"><h3>Deaths</h3></label>
         </div>
       </div>
     </div>

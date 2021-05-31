@@ -7,11 +7,12 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { SafetyComponent } from './safety/safety.component';
 
 const routes: Routes = [
-  { path:'' , component : HomepageComponent},
+  { path:'homepage' , component : HomepageComponent},
   { path:'home', component:HomeComponent },
   { path:'countries', component:CountriesComponent },
   { path:'safety' ,component: SafetyComponent},
   { path:'helplines' ,component:HelplinesComponent},
+  { path:'', redirectTo:"/homepage",pathMatch:"full"},
   { path:'**', redirectTo:'',pathMatch:"full"},
 ];
 
